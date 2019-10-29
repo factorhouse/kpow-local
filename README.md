@@ -2,7 +2,7 @@
 
 ### Run OPERATR locally against a Dockerized 3-node Apache Kafka® cluster.
 
-To connect OPERATR (or other streaming services) to Kafka running with docker-compose we need to ensure they are on the same network. OPERATR should run against any 3-node Kafka Cluster, this is one example setup:
+To connect OPERATR (or other streaming services) to Kafka running with docker-compose we need to ensure they are on the same network. OPERATR will run against any Kafka Cluster with minimum 3 nodes. This is one example setup:
 
 ## Instructions
 
