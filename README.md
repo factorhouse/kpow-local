@@ -26,4 +26,4 @@ docker run --network=operatr_default -p 3000:3000 --env-file ./local.env operatr
 
 -----
 
-Any issues? Just [raise a ticket!](https://github.com/operatr-io/community/issues)
+&copy Operatr IO, Inc. MIT Licensed. Any issues? Just [raise a ticket!](https://github.com/operatr-io/community/issues)
