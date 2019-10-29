@@ -21,3 +21,5 @@ docker-compose -p operatr up
 ```bash
 docker run --network=operatr_default -p 3000:3000 --env-file ./local.env operatr/operatr:latest
 ```
+
+5. **VIEW** OPERATR is now running on localhost:3000. Graphs and data should be populated within 2 minutes.
