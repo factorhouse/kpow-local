@@ -24,4 +24,6 @@ docker run --network=operatr_default -p 3000:3000 --env-file ./local.env operatr
 
 5. **VIEW** OPERATR on localhost:3000. Graphs and data should be populated within 2 minutes.
 
+-----
+
 Any issues? Just [raise a ticket!](https://github.com/operatr-io/community/issues)
