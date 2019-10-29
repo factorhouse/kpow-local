@@ -1,6 +1,8 @@
 # [OPERATR](https://operatr.io) with Docker Compose
 
-Run OPERATR locally against a containerized 3-node Apache Kafka® cluster.
+Run OPERATR locally against a Dockerized 3-node Apache Kafka® cluster.
+
+To connect OPERATR (or other streaming services) to Kafka running with docker-compose we need to ensure they are on the same network. OPERATR should run against any 3-node Kafka Cluster, this is one example setup:
 
 ## Instructions
 
@@ -19,5 +21,3 @@ docker-compose -p operatr up
 ```bash
 docker run --network=operatr_default -p 3000:3000 --env-file ./local.env operatr/operatr:latest
 ```
-
-OPERATR should work with any local environment setup with minumum 3-node Kafka cluster.
