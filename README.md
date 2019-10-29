@@ -8,7 +8,7 @@ To connect OPERATR (or other streaming services) to Kafka running with docker-co
 
 1. **CLONE** this repository.
 
-2. **EDIT** local.env and replace YOUR_CODE_HERE with your trial code.
+2. **EDIT** local.env and replace YOUR_CODE_HERE with your trial code. Need a code? [Get one now](https://operatr.io/#/get-operatr).
 
 3. **START** a new 3-node containerized Kafka cluster with a network named 'operatr_default'
 
