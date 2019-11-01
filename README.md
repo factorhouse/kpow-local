@@ -28,6 +28,7 @@ docker run --network=operatr_default -p 3000:3000 --env-file ./local.env operatr
 
 5. **VIEW** OPERATR on http://localhost:3000. Graphs and data should be populated within 2 minutes.
 
+6. **NOTE** The Kafka brokers are accessible on localhost:9092/9093/9094 if you want to configure other services.
 -----
 
 Any issues? Just [raise a ticket](https://github.com/operatr-io/community/issues).
