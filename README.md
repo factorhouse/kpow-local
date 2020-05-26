@@ -20,21 +20,27 @@ git clone https://github.com/operatr-io/local.git operatr-local
 cd operatr-local
 ```
 
-4. **START** a new 3-node containerized Kafka cluster with a network named 'operatr_default'
+4. **EDIT** local.env and add your trial license details
+
+```bash
+vi local.env
+```
+
+5. **START** a new 3-node containerized Kafka cluster with a network named 'operatr_default'
 
 ```bash
 docker-compose -p operatr up
 ```
 
-5. **START** OPERATR with the same Docker network and the correct local environment settings.
+6. **START** OPERATR with the same Docker network and the correct local environment settings.
 
 ```bash
 docker run --network=operatr_default -p 3000:3000 --env-file ./local.env operatr/operatr:latest
 ```
 
-6. **VIEW** OPERATR on http://localhost:3000. Graphs and data should be populated within 2 minutes.
+7. **VIEW** OPERATR on http://localhost:3000. Graphs and data should be populated within 2 minutes.
 
-7. **NOTE** The Kafka brokers are accessible on localhost:9092/9093/9094 if you want to configure other services.
+8. **NOTE** The Kafka brokers are accessible on localhost:9092/9093/9094 if you want to configure other services.
 -----
 
 Any issues? Just [raise a ticket](https://github.com/operatr-io/community/issues).
