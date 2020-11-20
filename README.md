@@ -41,7 +41,11 @@ docker-compose -p kpow up
 docker run --network=kpow_default -p 3000:3000 --env-file ./local.env operatr/kpow:latest
 ```
 
-7. **VIEW** kPow on http://localhost:3000. kPow takes **two minutes** to initialize state on startup.
+7. **VIEW** kPow on http://localhost:3000. 
+
+**Note:** kPow takes **two minutes** to initialize state on firt startup.
+
+![kPow Starting](resources/screen-resources.png?raw=true)
 
 8. **NOTE** The Kafka brokers are accessible on localhost:9092/9093/9094 if you want to configure other services.
 -----
