@@ -1,11 +1,15 @@
 # [kPow for Apache Kafka®](https://kpow.io) 
 ## Evaluate locally with Docker Compose
 
+The following steps will start a 3-node Kafka cluster on your machine with Docker Compose, and then connect the latest version of kPow to that Kafka cluster with a 30-day trial licence that you have [obtained from our site](https://kpow.io/try/).
+
+kPow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments. 
+
+kPow also manages Schema Registries, Kafka Connect clusters, support a slew of enterprise integrations like User Authenication and RBAC, and will run with as little as ***256MB*** of memory and ***0.25CPU*** for a small installation. Our recommended installation is ***1GB/0.5CPU****
+
+See our [User Guide](https://docs.kpow.io) for full documentation, this is the simplest configuration:
+
 ### To run kPow locally against a Dockerized 3-node Apache Kafka® cluster:
-
-kPow will run with any Kafka Cluster from v1.0+. 
-
-See our [User Guide](https://docs.kpow.io) for full documentation, this is one simple configuration:
 
 ## Instructions
 
@@ -38,7 +42,7 @@ docker-compose -p kpow up
 6. **START** kPow with the same Docker network and the correct local environment settings.
 
 ```bash
-docker run --network=kpow_default -p 3000:3000 --env-file ./local.env operatr/kpow:latest
+docker run --network=kpow_default -p 3000:3000 -m1G --env-file ./local.env operatr/kpow:latest
 ```
 
 7. **VIEW** kPow on http://localhost:3000. 
