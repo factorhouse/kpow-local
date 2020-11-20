@@ -1,7 +1,7 @@
 # [kPow for Apache Kafka®](https://kpow.io) 
 ## Evaluate locally with Docker Compose
 
-The following steps will start a 3-node Kafka cluster on your machine with Docker Compose, and then connect the latest version of kPow to that Kafka cluster with a 30-day trial licence that you have [obtained from our site](https://kpow.io/try/).
+The following steps will start a 3-node Kafka cluster on your machine with Docker Compose and connect the latest version of kPow to that Kafka cluster with a 30-day trial licence that you have [obtained from our site](https://kpow.io/try/).
 
 kPow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments. 
 
