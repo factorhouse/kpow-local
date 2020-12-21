@@ -7,7 +7,9 @@ kPow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR 
 
 kPow also manages Schema Registries, Kafka Connect clusters, support a slew of enterprise integrations like User Authentication and RBAC, and runs with as little as ***256MB*** of memory and ***0.25CPU*** for a small installation. Our recommended installation is ***1GB/0.5CPU***.
 
-See our [User Guide](https://docs.kpow.io) for full documentation, this is the simplest configuration:
+Contact sales@operatr.io to upgrade your trial license to a fully featured 1-month Pro license if to evaluate User Authentication, Role Based Access Control, Data Policies, Prometheus Endpoints and more.
+
+See our [User Guide](https://docs.kpow.io) for full documentation, this is the simplest configuration.
 
 ### To run kPow locally against a Dockerized 3-node Apache Kafka® cluster:
 
