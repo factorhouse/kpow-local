@@ -5,7 +5,7 @@ The following steps will start a 3-node Kafka cluster on your machine with Docke
 
 kPow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments. 
 
-kPow also manages Schema Registries, Kafka Connect clusters, support a slew of enterprise integrations like User Authentication and RBAC, and runs with as little as ***256MB*** of memory and ***0.25CPU*** for a small installation. Our recommended installation is ***1GB/0.5CPU***.
+kPow also manages Schema Registries, Kafka Connect clusters, support a slew of enterprise integrations like User Authentication and RBAC, and runs with as little as ***500MB*** of memory and ***0.25CPU*** for a small installation. Our recommended installation is ***1GB/0.5CPU***.
 
 Contact sales@operatr.io to upgrade your trial license to a fully featured 1-month Pro license if to evaluate User Authentication, Role Based Access Control, Data Policies, Prometheus Endpoints and more.
 
