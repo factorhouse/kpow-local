@@ -2,6 +2,36 @@ version: '2.1'
 
 services:
 
+  kpow:
+    image: operatr/kpow
+    ports:
+      - "3000:3000"
+    depends_on:
+      - kafka-1
+      - kafka-2
+      - kafka-3
+    env_file:
+      - local.env
+    resource:
+      limits:
+        memory: 1G
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./resources/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    depends_on:
+      - kpow
+
+  alertmanager:
+    image: prom/alertmanager
+    depends_on:
+      - prometheus
+    ports:
+      - 9001:9093
+
   zookeeper:
     image: confluentinc/cp-zookeeper:5.3.1
     ports:
