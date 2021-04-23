@@ -1,61 +1,45 @@
-# [kPow for Apache Kafka®](https://kpow.io) 
+# [kPow for Apache Kafka®](https://kpow.io)
+[![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
+![Docker Pulls](https://img.shields.io/docker/pulls/operatr/operatr)
+
 ## Evaluate locally with Docker Compose
 
-The following steps will start a 3-node Kafka cluster on your machine with Docker Compose and connect the latest version of kPow to that Kafka cluster with a 30-day trial licence that you have [obtained from our site](https://kpow.io/try/).
+The following steps will start a 3-node Kafka cluster on your machine with Docker Compose and connects the latest version of kPow to that Kafka cluster with a 30-day trial licence that you have [obtained from our site](https://kpow.io/try/).
 
-kPow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments. 
+See our [User Guide](https://docs.kpow.io) for full documentation, this is the simplest configuration to get up and running in minutes.
 
-kPow also manages Schema Registries, Kafka Connect clusters, support a slew of enterprise integrations like User Authentication and RBAC, and runs with as little as ***500MB*** of memory and ***0.25CPU*** for a small installation. Our recommended installation is ***1GB/0.5CPU***.
+## kPow
 
-Contact sales@operatr.io to upgrade your trial license to a fully featured 1-month Pro license if to evaluate User Authentication, Role Based Access Control, Data Policies, Prometheus Endpoints and more.
+![kPow in action](resources/kpow-ui.png)
 
-See our [User Guide](https://docs.kpow.io) for full documentation, this is the simplest configuration.
+## Prerequisites
 
-### To run kPow locally against a Dockerized 3-node Apache Kafka® cluster:
+* Install [docker-compose](https://docs.docker.com/compose/install/)
+* A valid kPow license (click [here](https://kpow.io/try/) for a 30-day trial)
 
 ## Instructions
 
-1. **CLONE** this repository.
+The main folder of this repository contains a functional docker-compose.yml file. Run the application using it as shown below:
 
-```bash
-git clone https://github.com/operatr-io/kpow-local.git
+```
+$ git clone https://github.com/operatr-io/kpow-local.git
+$ vim local.env # Add your LICENSE details here
+$ docker-compose up
 ```
 
-2. [Get a free, 30-Day trial license](https://kpow.io/try/).
+### Notes
 
-3. **CHANGE** to the cloned directory
+* kPow's web UI is accessible on http://localhost:3000. kPow takes **two minutes** to initialize state on first startup.
+* The Kafka brokers are accessible with bootstrap URL `127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094` if you want to configure other services.
 
-```bash
-cd kpow-local
-```
+## Support
 
-4. **EDIT** local.env and add your trial license details
+Any issues? Just [raise a ticket](https://github.com/operatr-io/community/issues) or view our [docs](https://docs.kpow.io).
 
-```bash
-vi local.env
-```
+Contact sales@operatr.io to upgrade your trial license to a fully featured 1-month Pro license if to evaluate User Authentication, Role Based Access Control, Data Policies, Prometheus Endpoints and more.
 
-5. **START** a new 3-node containerized Kafka cluster with a network named 'kpow_default'
+Looking to evaluate kPow outside of Docker? kPow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments.
 
-```bash
-docker-compose -p kpow up
-```
+## License
 
-6. **START** kPow with the same Docker network and the correct local environment settings.
-
-```bash
-docker run --network=kpow_default -p 3000:3000 -m1G --env-file ./local.env operatr/kpow:latest
-```
-
-7. **VIEW** kPow on http://localhost:3000. 
-
-**Note:** kPow takes **two minutes** to initialize state on firt startup.
-
-![kPow Starting](resources/screen-resources.png?raw=true)
-
-8. **NOTE** The Kafka brokers are accessible on localhost:9092/9093/9094 if you want to configure other services.
------
-
-Any issues? Just [raise a ticket](https://github.com/operatr-io/community/issues).
-
-Copyright © Operatr.IO 2020.
+Copyright © Operatr.IO 2021.
