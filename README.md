@@ -23,6 +23,7 @@ The main folder of this repository contains a functional docker-compose.yml file
 
 ```
 $ git clone https://github.com/operatr-io/kpow-local.git
+$ cd kpow-local
 $ vim local.env # Add your LICENSE details here
 $ docker-compose up
 ```
