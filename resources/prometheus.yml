@@ -1,0 +1,5 @@
+scrape_configs:
+  - job_name: 'kpow'
+    metrics_path: '/metrics/v1'
+    static_configs:
+      - targets: ['kpow:3000']

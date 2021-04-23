@@ -30,7 +30,7 @@ $ docker-compose up
 ### Notes
 
 * kPow's web UI is accessible on http://localhost:3000. kPow takes **two minutes** to initialize state on first startup.
-* The Kafka brokers are accessible with bootstrap URL `localhost:9092,localhost:9093,localhost:9094` if you want to configure other services.
+* The Kafka brokers are accessible with bootstrap URL `127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094` if you want to configure other services.
 
 ## Support
 
