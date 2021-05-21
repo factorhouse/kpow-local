@@ -3,3 +3,12 @@ scrape_configs:
     metrics_path: '/metrics/v1'
     static_configs:
       - targets: ['kpow:3000']
+
+rule_files:
+  - kpow-rules.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+      - targets:
+        - alertmanager:9093
