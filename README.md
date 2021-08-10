@@ -33,6 +33,16 @@ $ vim local.env # Add your LICENSE details here
 $ docker-compose up
 ```
 
+## Prometheus Integration
+
+Email [sales@operatr.io](mailto:sales@operatr.io) to upgrade your trial license to a full one-month license and evaluate kPow + Promethues.
+
+Then edit local.env and set:
+
+```
+PROMETHEUS_EGRESS=true
+```
+
 ### Notes
 
 * kPow's web UI is accessible on http://localhost:3000
