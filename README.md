@@ -19,18 +19,24 @@ See our [User Guide](https://docs.kpow.io) for full documentation, this is the s
 
 ## Instructions
 
-The main folder of this repository contains a functional docker-compose.yml file. Run the application using it as shown below:
+The main folder of this repository contains a functional docker-compose.yml file. 
+
+Run the application using it as shown below:
 
 ```
 $ git clone https://github.com/operatr-io/kpow-local.git
+
 $ cd kpow-local
+
 $ vim local.env # Add your LICENSE details here
+
 $ docker-compose up
 ```
 
 ### Notes
 
 * kPow's web UI is accessible on http://localhost:3000
+* Prometheus web UI with scraped kPow Metrics is accessible on http://localhost:9090/
 * The Kafka brokers are accessible with bootstrap URL `127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094` if you want to configure other services.
 
 ## Support
