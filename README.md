@@ -59,4 +59,4 @@ Looking to evaluate kPow outside of Docker? kPow will run with any Kafka Cluster
 
 ## License
 
-Copyright © Operatr.IO 2021.
+Copyright © Operatr.IO 2021-2002.
