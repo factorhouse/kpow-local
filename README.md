@@ -1,21 +1,21 @@
-# [kPow for Apache Kafka®](https://kpow.io)
+# [Kpow for Apache Kafka®](https://kpow.io)
 [![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/operatr)
 
 ## Evaluate locally with Docker Compose
 
-The following steps will start a 3-node Kafka cluster on your machine with Docker Compose and connects the latest version of kPow to that Kafka cluster with a 30-day trial licence that you have [obtained from our site](https://kpow.io/try/).
+The following steps will start a 3-node Kafka cluster on your machine with Docker Compose and connects the latest version of Kpow to that Kafka cluster with a 30-day trial licence that you have [obtained from our site](https://kpow.io/try/).
 
 See our [User Guide](https://docs.kpow.io) for full documentation, this is the simplest configuration to get up and running in minutes.
 
-## kPow
+## Kpow
 
-![kPow in action](resources/kpow-ui.png)
+![Kpow in action](resources/kpow-ui.png)
 
 ## Prerequisites
 
 * Install [docker-compose](https://docs.docker.com/compose/install/)
-* A valid kPow license (click [here](https://kpow.io/try/) for a 30-day trial)
+* A valid Kpow license (click [here](https://kpow.io/try/) for a 30-day trial)
 
 ## Instructions
 
@@ -35,7 +35,7 @@ $ docker-compose up
 
 ## Prometheus Integration
 
-Email [sales@operatr.io](mailto:sales@operatr.io) to upgrade your trial license to a full one-month license and evaluate kPow + Promethues.
+Email [sales@operatr.io](mailto:sales@operatr.io) to upgrade your trial license to a full one-month license and evaluate Kpow + Promethues.
 
 Then edit local.env and set:
 
@@ -45,8 +45,8 @@ PROMETHEUS_EGRESS=true
 
 ### Notes
 
-* kPow's web UI is accessible on http://localhost:3000
-* Prometheus web UI with scraped kPow Metrics is accessible on http://localhost:9090/
+* Kpow's web UI is accessible on http://localhost:3000
+* Prometheus web UI with scraped Kpow Metrics is accessible on http://localhost:9090/
 * The Kafka brokers are accessible with bootstrap URL `127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094` if you want to configure other services.
 
 ## Support
@@ -55,7 +55,7 @@ Any issues? Just [raise a ticket](https://github.com/operatr-io/community/issues
 
 Contact sales@operatr.io to upgrade your trial license to a fully featured 1-month Pro license if to evaluate User Authentication, Role Based Access Control, Data Policies, Prometheus Endpoints and more.
 
-Looking to evaluate kPow outside of Docker? kPow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments.
+Looking to evaluate Kpow outside of Docker? Kpow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments.
 
 ## License
 
