@@ -24,7 +24,7 @@ The main folder of this repository contains a functional docker-compose.yml file
 Run the application using it as shown below:
 
 ```bash
-$ git clone https://github.com/operatr-io/kpow-local.git
+$ git clone https://github.com/factorhouse/kpow-local.git
 
 $ cd kpow-local
 
@@ -51,12 +51,12 @@ PROMETHEUS_EGRESS=true
 
 ## Support
 
-Any issues? Just [raise a ticket](https://github.com/operatr-io/community/issues) or view our [docs](https://docs.kpow.io).
+Any issues? Just [raise a ticket](https://github.com/factorhouse/kpow-local/issues) or view our [docs](https://docs.kpow.io).
 
-Contact sales@operatr.io to upgrade your trial license to a fully featured 1-month Pro license if to evaluate User Authentication, Role Based Access Control, Data Policies, Prometheus Endpoints and more.
+Contact sales@factorhouse.io to upgrade your trial license to a fully featured 1-month Pro license if to evaluate User Authentication, Role Based Access Control, Data Policies, Prometheus Endpoints and more.
 
 Looking to evaluate Kpow outside of Docker? Kpow will run with any Kafka Cluster from v1.0+ and is also [available as a JAR file](https://kpow.io/releases) for those without Dockerized environments.
 
 ## License
 
-Copyright © Operatr.IO 2021-2002.
+Copyright © Factor House 2021-2002.
