@@ -10,7 +10,7 @@ See our [User Guide](https://docs.kpow.io) for full documentation, this is the s
 
 ## Kpow
 
-![Kpow in action](resources/kpow-ui.png)
+![Kpow in action.](resources/kpow-ui.png)
 
 ## Prerequisites
 
