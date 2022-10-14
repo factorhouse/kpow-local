@@ -30,7 +30,7 @@ docker compose up
 
 * Kpow will be available at `http://localhost:3000`
 * Kafka Connect will be available at `http://localhost:8083` (unauthenticated)
-* Schema Registry will be available at `http://localhost:8001` (basic auth username `admin` and password `admin`)
+* Schema Registry will be available at `http://localhost:8001` (basic auth username is `admin` and password is `admin`)
 * The Kafka clusters `bootstrap.servers` is `127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094` (unauthenticated)
 
 ## Extending the environment
