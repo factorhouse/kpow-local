@@ -13,6 +13,8 @@ This repository contains a Docker Compose environment that will start:
 
 Perfect for local development!
 
+All container images used support `linux/amd64` and `linux/arm64` platforms
+
 ## Usage
 
 ```
@@ -23,12 +25,29 @@ docker compose up
 
 **Note:** Kpow's Ui will start once Kafka Connect becomes healthy.
 
+
+
 ## Coordinates
 
 * Kpow will be available at `http://localhost:3000`
 * Kafka Connect will be available at `http://localhost:8083` (unauthenticated)
 * Schema Registry will be available at `http://localhost:8001` (basic auth username `schema` and password `schema-password`)
 * The Kafka clusters `bootstrap.servers` is `127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094` (unauthenticated)
+
+## Extending the environment
+
+### Custom Connectors
+
+To add custom Kafka Connect connectors create a `connect` directory and add all JARs there.
+
+For example, to add the [Debezium PostgresSQL connectors](https://debezium.io/documentation/reference/stable/connectors/postgresql.html):
+
+```bash
+mkdir -p kpow-local/connect
+cd kpow-local/connect
+curl -L -o debezium-connector-postgres-1.9.6.Final-plugin.tar.gz https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.9.6.Final/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz 
+tar –xvzf debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
+```
 
 ## Support
 
