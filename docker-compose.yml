@@ -1,40 +1,68 @@
 version: '2.1'
 
 services:
-
-  kpow:
-    image: operatr/kpow
+  schema:
+    image: confluentinc/cp-schema-registry:7.2.2
     ports:
-      - "3000:3000"
+      - "8081:8081"
     depends_on:
+      - zookeeper
       - kafka-1
       - kafka-2
       - kafka-3
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: "schema"
+      SCHEMA_REGISTRY_LISTENERS: http://schema:8081,http://${DOCKER_HOST_IP:-127.0.0.1}:8081
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: "kafka-1:19092,kafka-2:19093,kafka-3:19094"
+      SCHEMA_REGISTRY_AUTHENTICATION_METHOD: BASIC
+      SCHEMA_REGISTRY_AUTHENTICATION_REALM: schema
+      SCHEMA_REGISTRY_AUTHENTICATION_ROLES: schema-admin
+      SCHEMA_REGISTRY_OPTS: -Djava.security.auth.login.config=/etc/schema/schema_jaas.conf
+    volumes:
+      - ./schema:/etc/schema
+
+  connect:
+    image: confluentinc/cp-kafka-connect:7.2.2
+    container_name: connect
+    depends_on:
+      - zookeeper
+      - kafka-1
+      - kafka-2
+      - kafka-3
+    ports:
+      - 8083:8083
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: "kafka-1:19092,kafka-2:19093,kafka-3:19094"
+      CONNECT_REST_PORT: "8083"
+      CONNECT_GROUP_ID: "kpow-local-connect"
+      CONNECT_CONFIG_STORAGE_TOPIC: "kpow-local-connect-config"
+      CONNECT_OFFSET_STORAGE_TOPIC: "kpow-local-connect-offsets"
+      CONNECT_STATUS_STORAGE_TOPIC: "kpow-local-connect-status"
+      CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_REST_ADVERTISED_HOST_NAME: "localhost"
+      CONNECT_LOG4J_ROOT_LOGLEVEL: "INFO"
+      CONNECT_PLUGIN_PATH: "/usr/share/java,/etc/kafka-connect/jars"
+    volumes:
+      - ./connect:/etc/kafka-connect/jars
+
+  kpow:
+    image: factorhouse/kpow-ce
+    pull_policy: always
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      connect:
+       condition: service_healthy
     env_file:
       - local.env
     mem_limit: 1G
 
-  prometheus:
-    image: prom/prometheus
-    volumes:
-      - ./resources/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./resources/kpow-rules.yml:/etc/prometheus/kpow-rules.yml
-    ports:
-      - 9090:9090
-    depends_on:
-      - kpow
-
-  alertmanager:
-    image: prom/alertmanager
-    volumes:
-      - ./resources/alertmanager.yml:/etc/alertmanager/alertmanager.yml
-    depends_on:
-      - prometheus
-    ports:
-      - 9001:9093
-
   zookeeper:
-    image: confluentinc/cp-zookeeper:6.1.1
+    image: confluentinc/cp-zookeeper:7.2.2
     ports:
       - "2181:2181"
     environment:
@@ -42,7 +70,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
 
   kafka-1:
-    image: confluentinc/cp-kafka:6.1.1
+    image: confluentinc/cp-kafka:7.2.2
     ports:
       - "9092:9092"
     environment:
@@ -56,9 +84,8 @@ services:
     depends_on:
       - zookeeper
 
-
   kafka-2:
-    image: confluentinc/cp-kafka:6.1.1
+    image: confluentinc/cp-kafka:7.2.2
     ports:
       - "9093:9093"
     environment:
@@ -73,7 +100,7 @@ services:
       - zookeeper
 
   kafka-3:
-    image: confluentinc/cp-kafka:6.1.1
+    image: confluentinc/cp-kafka:7.2.2
     ports:
       - "9094:9094"
     environment:
