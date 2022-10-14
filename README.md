@@ -23,8 +23,7 @@ cd kpow-local
 docker compose up
 ```
 
-**Note:** Kpow's Ui will start once Kafka Connect becomes healthy.
-
+**Note:** Kpow's UI will start once Kafka Connect becomes healthy.
 
 
 ## Coordinates
