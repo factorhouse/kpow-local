@@ -59,4 +59,4 @@ Any issues? Contact [support](https://kpow.io/support) or view our [docs](https:
 
 ## License
 
-Copyright © Factor House 2021-2002.
+Copyright © Factor House 2021-2022.
