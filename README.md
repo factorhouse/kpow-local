@@ -13,7 +13,7 @@ This repository contains a Docker Compose environment that will start:
 
 Perfect for local development!
 
-All container images used support `linux/amd64` and `linux/arm64` platforms
+All container images used support `linux/amd64` and `linux/arm64` platforms.
 
 ## Usage
 
