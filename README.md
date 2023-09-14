@@ -17,14 +17,42 @@ All container images used support `linux/amd64` and `linux/arm64` platforms.
 
 ## Usage
 
+### Clone this repo
+
 ```
-git clone git@github.com:factorhouse/kpow-local.git 
+git clone git@github.com:factorhouse/kpow-local.git
+```
+
+### Change into the repo directory
+
+```
 cd kpow-local
+```
+
+### Add your license details to local.env
+
+```
+BOOTSTRAP=kafka-1:19092,kafka-2:19093,kafka-3:19094
+CONNECT_REST_URL=http://connect:8083
+SCHEMA_REGISTRY_URL=http://schema:8081
+SCHEMA_REGISTRY_AUTH=USER_INFO
+SCHEMA_REGISTRY_USER=admin
+SCHEMA_REGISTRY_PASSWORD=admin
+
+### Your License Details
+LICENSE_ID=<license-id>
+LICENSE_CODE=<license-code>
+LICENSEE=<licensee>
+LICENSE_EXPIRY=<license-expiry>
+LICENSE_SIGNATURE=<license-signature>
+```
+
+### Start docker-compose
+
+```
 docker compose up
 ```
-
 **Note:** Kpow's UI will start once Kafka Connect becomes healthy.
-
 
 ## Coordinates
 
@@ -51,7 +79,6 @@ tar –xvzf debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
 ## Support
 
 Any issues? Contact [support](https://kpow.io/support) or view our [docs](https://docs.kpow.io).
-
 
 ## Kpow
 
