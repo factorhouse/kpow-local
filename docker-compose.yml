@@ -49,7 +49,7 @@ services:
       - ./connect:/etc/kafka-connect/jars
 
   kpow:
-    image: factorhouse/kpow-ce:91.5.1
+    image: factorhouse/kpow-ce:91.6.1
     pull_policy: always
     restart: always
     ports:
