@@ -31,6 +31,8 @@ cd kpow-local
 
 ### Add your license details to local.env
 
+Get a free Kpow Community license [right here](https://factorhouse.io/kpow/community/).
+
 ```
 BOOTSTRAP=kafka-1:19092,kafka-2:19093,kafka-3:19094
 CONNECT_REST_URL=http://connect:8083
