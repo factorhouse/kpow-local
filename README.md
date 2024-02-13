@@ -25,6 +25,10 @@
     * [Kafka Cluster](#kafka-cluster)
     * [Kafka Connect](#kafka-connect)
     * [Schema Registry](#schema-registry)
+  * [Add Kafka Connect Connectors](#add-kafka-connect-connectors)
+    * [Custom connectors](#custom-connectors)
+* [Support](#support)
+* [License](#license)
 
 ## Introduction
 
