@@ -67,7 +67,7 @@ LICENSE_EXPIRY=<license-expiry>
 LICENSE_SIGNATURE=<license-signature>
 ```
 
-### Start docker-compose
+### Start Resources
 
 ```
 docker compose -f docker-compose-community.yml up
@@ -81,7 +81,42 @@ docker compose -f docker-compose-community.yml up
  ...
 ```
 
-## Resources
+### Stop Resources 
+
+First, hit ctrl-c in the terminal running the Docker Compose process.
+
+```bash
+^C
+Gracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 1/3
+ ✔ Container kpow-local-kpow-1    Stopped                                                                                                                                                                                                                 0.0s
+[+] Stopping 2/3w-local-schema-1  Stopping                                                                                                                                                                                                                0.4s
+ ✔ Container kpow-local-kpow-1    Stopped                                                                                                                                                                                                                 0.0s
+[+] Stopping 3/3w-local-schema-1  Stopping                                                                                                                                                                                                                0.5s
+ ✔ Container kpow-local-kpow-1     Stopped                                                                                                                                                                                                                0.0s
+ ✔ Container kpow-local-schema-1   Stopped
+ ...
+```
+
+Then stop/clear the Docker Compose resources
+
+```
+docker compose -f docker-compose-community.yml down
+```
+
+```
+[+] Running 8/7
+ ✔ Container kpow-local-kpow-1       Removed                                                                                                                                                                                                              0.0s
+ ✔ Container kpow-local-schema-1     Removed                                                                                                                                                                                                              0.0s
+ ✔ Container connect                 Removed                                                                                                                                                                                                              0.0s
+ ✔ Container kpow-local-kafka-2-1    Removed                                                                                                                                                                                                              0.0s
+ ✔ Container kpow-local-kafka-3-1    Removed                                                                                                                                                                                                              0.0s
+ ✔ Container kpow-local-kafka-1-1    Removed                                                                                                                                                                                                              0.0s
+ ✔ Container kpow-local-zookeeper-1  Removed                                                                                                                                                                                                              0.5s
+ ✔ Network kpow-local_default        Removed
+```
+
+## Access Resources
 
 ### Kpow Community Edition
 
