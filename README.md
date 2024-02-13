@@ -1,4 +1,5 @@
-# [Kpow for Apache Kafka®](https://kpow.io)
+# Run Local Kafka and Kpow with Docker Compose
+
 [![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
 
