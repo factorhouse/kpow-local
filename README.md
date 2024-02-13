@@ -20,7 +20,7 @@ This repository contains a Docker Compose environment that will start:
 
 All container images used support `linux/amd64` and `linux/arm64` platforms.
 
-See [kafka-local](https://github.com/factorhouse/kafka-local) for a simpler local configuration consisting of only Kafka clusters.
+See [kafka-local](https://github.com/factorhouse/kafka-local) for a simple local configuration consisting of only Kafka.
 
 ## Prerequisites
 
