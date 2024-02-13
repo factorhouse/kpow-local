@@ -16,7 +16,16 @@
   * [Install Docker](#install-docker)
   * [Clone this repository](#clone-this-repository)
   * [Change into the repository directory](#change-into-the-repository-directory)
-* [] 
+* [Run Kafka resources with Kpow Community](#run-kafka-resources-with-kpow-community)
+  * [Configure a Kpow Community License](#configure-a-kpow-community-license)
+  * [Start resouces](#start-resources)
+  * [Stop resources](#stop-resources)
+  * [Access resources](#access-resources)
+    * [Kpow Community Edition](#kpow-community-edition)
+    * [Kafka Cluster](#kafka-cluster)
+    * [Kafka Connect](#kafka-connect)
+    * [Schema Registry](#schema-registry)
+
 ## Introduction
 
 This repository contains a Docker Compose environment that will start:
@@ -77,7 +86,7 @@ LICENSE_EXPIRY=<license-expiry>
 LICENSE_SIGNATURE=<license-signature>
 ```
 
-### Start Resources
+### Start resources
 
 ```
 docker compose -f docker-compose-community.yml up
@@ -91,7 +100,7 @@ docker compose -f docker-compose-community.yml up
  ...
 ```
 
-### Stop Resources 
+### Stop resources
 
 First, hit ctrl-c in the terminal running the Docker Compose process.
 
@@ -126,7 +135,7 @@ docker compose -f docker-compose-community.yml down
  ✔ Network kpow-local_default        Removed
 ```
 
-## Access Resources
+## Access resources
 
 ### Kpow Community Edition
 
