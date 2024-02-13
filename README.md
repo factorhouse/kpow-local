@@ -205,7 +205,7 @@ Similarly to Kafka cluster configuration you can access the unauthenticated Kafk
 
 Each schema client requires the basic authentication credentials of `admin/admin`.
 
-## Adding Kafka Connect Connectors
+## Add Kafka Connect Connectors
 
 ### Custom Connectors
 
