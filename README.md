@@ -9,7 +9,7 @@
 |----------------------------|-------------------------------|---------------------------------|
 | factorhouse/kpow-ce:latest | `confluentinc/cp-kafka:7.5.3` | `org.apache.kafka/kafka:3.5.2`  |
 
-## Local Development with Kpow
+## Introduction
 
 This repository contains a Docker Compose environment that will start:
 
@@ -18,11 +18,17 @@ This repository contains a Docker Compose environment that will start:
 - Schema Registry 
 - Kpow Community Edition
 
-Perfect for local development!
-
 All container images used support `linux/amd64` and `linux/arm64` platforms.
 
-## Usage
+See [kafka-local](https://github.com/factorhouse/kafka-local) for a simpler local configuration consisting of only Kafka clusters.
+
+## Prerequisites
+
+### Install Docker
+
+The local cluster runs with Docker Compose, so you will need to [install Docker](https://www.docker.com/).
+
+Once Docker is installed, clone this repository and run the following commands from the base path.
 
 ### Clone this repo
 
