@@ -68,45 +68,113 @@ LICENSE_SIGNATURE=<license-signature>
 ### Start docker-compose
 
 ```
-❯ docker compose -f docker-compose-community.yml up
+docker compose -f docker-compose-community.yml up
+```
+
+```
 [+] Running 13/13
  ✔ kpow Pulled                                                                                                                                                                                                                                            2.7s
  ✔ schema 11 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled
  ...
  ...
 ```
-**Note:** Kpow's UI will start once Kafka resources are available.
 
-## Coordinates
+## Resources
 
-* Kpow will be available at `http://localhost:3000`
-* Kafka Connect will be available at `http://localhost:8083` (unauthenticated)
-* Schema Registry will be available at `http://localhost:8001` (basic auth username is `admin` and password is `admin`)
-* The Kafka brokers are accessible with bootstrap URL `127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094` (unauthenticated)
+### Kpow Community Edition
 
-## Extending the environment
+The community edition of Kpow for Apache Kafka is free to use by individuals and organisations.
+
+Kpow's UI will be available at `http://localhost:3000` once all Kafka resources are running.
+
+![Kpow UI](/resources/img/kpow-overview.png)
+
+### Kafka Cluster
+
+To access the cluster you can:
+
+1. Connect to the bootstrap on localhost / 127.0.0.1 (most likely non-docker applications)
+2. Connect to the bootstrap on the Docker defined hosts (kakfa-1, kafka-2, kafka-3)
+3. Connect to the bootstrap using `host.docker.internal` which is similar to (1)
+
+#### Localhost bootstrap
+
+Applications that are external to Docker can access the Kafka cluster via the Localhost bootstrap.
+
+```
+bootstrap: 127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094
+```
+
+#### Docker host bootstrap
+
+Containerized applications can connect to the Kafka cluster via the Docker Host bootstrap.
+
+These docker hosts (kakfa-1, kafka-2, kafka-3) are defined within the comoose.yml.
+
+When starting your Docker container, specify that it should share the `kpow-local_default` network.
+
+```
+docker run --network=kpow-local_default ...
+```
+
+Then connect to the hosts that are running on that network
+
+```
+bootstrap: kafka-1:19092,kafka-2:19093,kafka-3:19094 
+```
+
+#### host.docker.internal bootstrap
+
+This is a good trick for running a docker container that connects back to a port open on the host machine.
+
+`host.docker.internal` effective routes back to localhost.
+
+```
+bootstrap: host.docker.internal:9092,host.docker.internal:9093,host.docker.internal:9094 
+```
+
+### Kafka Connect
+
+Similarly to Kafka cluster configuration you can access the unauthenticated Kafka Connect cluster via:
+
+* `http://localhost:8083` (plain localhost for non-docker applications)
+* `http://connect:8083` (when setting the docker network and connecting to the docker host)
+* `http://host.docker.internal:8083` (when connecting from docker back to the host localhost)
+
+### Schema Registry
+
+* `http://localhost:8081` (plain localhost for non-docker applications)
+* `http://schema:8081` (when setting the docker network and connecting to the docker host)
+* `http://host.docker.internal:8081` (when connecting from docker back to the host localhost)
+
+Each connection requires the basic authentication credentials of `admin/admin`.
+
+## Adding Kafka Connect Connectors
 
 ### Custom Connectors
 
-To add custom Kafka Connect connectors create a `connect` directory and add all JARs there.
+To add custom Kafka Connect connectors create a `resources/connect` directory and add all JARs there.
 
 For example, to add the [Debezium PostgresSQL connectors](https://debezium.io/documentation/reference/stable/connectors/postgresql.html):
 
 ```bash
-mkdir -p kpow-local/connect
-cd kpow-local/connect
-curl -L -o debezium-connector-postgres-1.9.6.Final-plugin.tar.gz https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.9.6.Final/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz 
-tar –xvzf debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
+mkdir -p ./resources/connect
+```
+
+```
+curl -L -o ./resources/connect/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.9.6.Final/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
+```
+
+``` 
+tar –xvzf ./resources/connect/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
 ```
 
 ## Support
 
-Any issues? Contact [support](https://kpow.io/support) or view our [docs](https://docs.kpow.io).
-
-## Kpow
-
-![Kpow in action.](resources/kpow-ui.png)
+Any issues? Contact [support](https://factorhouse.io/support/) or view our [docs](https://docs.factorhouse.io/kpow-ce/).
 
 ## License
 
-Copyright © Factor House 2021-2022.
+This repository is released under the Apache 2.0 License.
+
+Copyright © Factor House.
