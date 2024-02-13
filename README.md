@@ -42,10 +42,12 @@ git clone git@github.com:factorhouse/kpow-local.git
 cd kpow-local
 ```
 
-### Add your license details to local.env
+## Run Kafka resources with Kpow Community
+
+### Add your license details to local-community.env
 
 * Get a [free Kpow Community license](https://factorhouse.io/kpow/community/)
-* Enter the license details into [resoources/kpow/no-auth.env](resources/kpow/local.env)
+* Enter the license details into [resoources/kpow/local-community.env](resources/kpow/local-community.env)
 
 ```
 BOOTSTRAP=kafka-1:19092,kafka-2:19093,kafka-3:19094
@@ -66,9 +68,14 @@ LICENSE_SIGNATURE=<license-signature>
 ### Start docker-compose
 
 ```
-docker compose up
+❯ docker compose -f docker-compose-community.yml up
+[+] Running 13/13
+ ✔ kpow Pulled                                                                                                                                                                                                                                            2.7s
+ ✔ schema 11 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled
+ ...
+ ...
 ```
-**Note:** Kpow's UI will start once Kafka Connect becomes healthy.
+**Note:** Kpow's UI will start once Kafka resources are available.
 
 ## Coordinates
 
