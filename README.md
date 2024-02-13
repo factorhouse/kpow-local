@@ -122,7 +122,7 @@ docker compose -f docker-compose-community.yml down
 
 The community edition of Kpow for Apache Kafka is free to use by individuals and organisations.
 
-Kpow's UI will be available at `http://localhost:3000` once all Kafka resources are running.
+Kpow's UI will be available at http://localhost:3000 once all Kafka resources are running.
 
 ![Kpow UI](/resources/img/kpow-overview.png)
 
@@ -184,7 +184,7 @@ Similarly to Kafka cluster configuration you can access the unauthenticated Kafk
 * `http://schema:8081` (when setting the docker network and connecting to the docker host)
 * `http://host.docker.internal:8081` (when connecting from docker back to the host localhost)
 
-Each connection requires the basic authentication credentials of `admin/admin`.
+Each schema client requires the basic authentication credentials of `admin/admin`.
 
 ## Adding Kafka Connect Connectors
 
