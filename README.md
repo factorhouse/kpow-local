@@ -9,6 +9,14 @@
 |------------------------------|-------------------------------|---------------------------------|
 | `factorhouse/kpow-ce:latest` | `confluentinc/cp-kafka:7.5.3` | `org.apache.kafka/kafka:3.5.2`  |
 
+### Guide
+
+* [Introduction](#introduction)
+* [Prequisites](#prerequisites)
+  * [Install Docker](#install-docker)
+  * [Clone this repository](#clone-this-repository)
+  * [Change into the repository directory](#change-into-the-repository-directory)
+ 
 ## Introduction
 
 This repository contains a Docker Compose environment that will start:
@@ -46,7 +54,7 @@ cd kpow-local
 
 ## Run Kafka resources with Kpow Community
 
-### Add your license details to local-community.env
+### Configure a Kpow Community License
 
 * Get a [free Kpow Community license](https://factorhouse.io/kpow/community/)
 * Enter the license details into [resoources/kpow/local-community.env](resources/kpow/local-community.env)
