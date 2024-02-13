@@ -44,7 +44,8 @@ cd kpow-local
 
 ### Add your license details to local.env
 
-Get a free Kpow Community license [right here](https://factorhouse.io/kpow/community/).
+* Get a [free Kpow Community license](https://factorhouse.io/kpow/community/)
+* Enter the license details into [resoources/kpow/no-auth.env](resources/kpow/local.env)
 
 ```
 BOOTSTRAP=kafka-1:19092,kafka-2:19093,kafka-3:19094
