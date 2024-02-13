@@ -19,7 +19,7 @@ services:
       SCHEMA_REGISTRY_AUTHENTICATION_ROLES: schema-admin
       SCHEMA_REGISTRY_OPTS: -Djava.security.auth.login.config=/etc/schema/schema_jaas.conf
     volumes:
-      - /resources/scheme:/etc/schema
+      - .//resources/schema:/etc/schema
 
   connect:
     image: confluentinc/cp-kafka-connect:7.5.3
