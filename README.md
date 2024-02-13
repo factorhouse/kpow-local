@@ -2,6 +2,12 @@
 [![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
 
+### Versions
+
+| Kpow Version               | Confluent Container Version   | Kafka Equivalent                |
+|----------------------------|-------------------------------|---------------------------------|
+| factorhouse/kpow-ce:latest | `confluentinc/cp-kafka:7.5.3` | `org.apache.kafka/kafka:3.5.2`  |
+
 ## Local Development with Kpow
 
 This repository contains a Docker Compose environment that will start:
