@@ -30,13 +30,13 @@ The local cluster runs with Docker Compose, so you will need to [install Docker]
 
 Once Docker is installed, clone this repository and run the following commands from the base path.
 
-### Clone this repo
+### Clone this repository
 
 ```
 git clone git@github.com:factorhouse/kpow-local.git
 ```
 
-### Change into the repo directory
+### Change into the repository directory
 
 ```
 cd kpow-local
