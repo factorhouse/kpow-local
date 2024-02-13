@@ -213,7 +213,7 @@ To add custom Kafka Connect connectors create a `resources/connect` directory an
 
 For example, to add the [Debezium PostgresSQL connectors](https://debezium.io/documentation/reference/stable/connectors/postgresql.html):
 
-```bash
+```
 mkdir -p ./resources/connect
 ```
 
@@ -221,9 +221,15 @@ mkdir -p ./resources/connect
 curl -L -o ./resources/connect/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.9.6.Final/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
 ```
 
-``` 
-tar –xvzf ./resources/connect/debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
 ```
+cd resources/connect
+```
+
+``` 
+tar –xvzf debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
+```
+
+Once installed, the connector will be visible within Kpow and available to create. 
 
 ## Support
 
