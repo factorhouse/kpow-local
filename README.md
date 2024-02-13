@@ -16,7 +16,7 @@
   * [Install Docker](#install-docker)
   * [Clone this repository](#clone-this-repository)
   * [Change into the repository directory](#change-into-the-repository-directory)
- 
+* [] 
 ## Introduction
 
 This repository contains a Docker Compose environment that will start:
@@ -53,6 +53,8 @@ cd kpow-local
 ```
 
 ## Run Kafka resources with Kpow Community
+
+Follow these instructions to run Kafka, Connect, and Schema resources with Kpow Community Edition.
 
 ### Configure a Kpow Community License
 
