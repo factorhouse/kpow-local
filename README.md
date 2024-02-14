@@ -248,7 +248,15 @@ A trial of Kpow allows you access to all features, including Authentication, Aut
 
 For example purposes we configure a simple [file-based authentication](/resources/jaas/hash-realm.properties) with an example [RBAC configuration](/resources/rbac/hash-rbac.yml).
 
-For production workloads Kpow supports a number of authentication providers including OpenID, OAuth2, Ldap, AWS SSO, Azure AD, Keycloak, and more.
+Kpow [supports a number of authentication providers](https://docs.factorhouse.io/kpow-ee/authentication/overview/) including: 
+
+* Okta
+* OpenID
+* OAuth2
+* Ldap
+* AWS SSO
+* Azure AD
+* Keycloak
 
 ### Configure a Kpow Enterprise Trial License
 
