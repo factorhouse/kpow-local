@@ -27,6 +27,7 @@
     * [Schema Registry](#schema-registry)
   * [Add Kafka Connect Connectors](#add-kafka-connect-connectors)
     * [Custom connectors](#custom-connectors)
+* [Run Kafka resources with Kpow Commercial Trial](#run-kafka-resources-with-kpow-commercial-trial)
 * [Support](#support)
 * [License](#license)
 
@@ -233,7 +234,52 @@ cd resources/connect
 tar –xvzf debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
 ```
 
-Once installed, the connector will be visible within Kpow and available to create. 
+Once installed, the connector will be visible within Kpow and available to create.
+
+## Run Kafka resources with Kpow Commercial Trial
+
+Follow these instructions to run Kafka, Connect, and Schema resources with Kpow Enterprise Edition.
+
+A commercial trial of Kpow allows you access to all features, including Authentication, Authorisation, RBAC, Audit Log, Prometheus egress, and more.
+
+![Kpow Login](/resources/img/kpow-login.png)
+
+For example purposes we configure a simple [file-based authentication](/resources/jaas/hash-realm.properties) with an example [RBAC configuration](/resources/rbac/hash-rbac.yml).
+
+For production workloads Kpow supports a number of authentication providers including OpenID, OAuth2, Ldap, AWS SSO, Azure AD, Keycloak, and more.
+
+### Configure a Kpow Commercial Trial License
+
+* Get a [free Kpow Trial license](https://factorhouse.io/kpow/get-started/)
+* Enter the license details into [resoources/kpow/local-trial.env](resources/kpow/local-trial.env)
+
+```
+JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/etc/kpow/jaas/hash-jaas.conf
+AUTH_PROVIDER_TYPE=jetty
+RBAC_CONFIGURATION_FILE=/etc/kpow/rbac/hash-rbac.yml
+
+BOOTSTRAP=kafka-1:19092,kafka-2:19093,kafka-3:19094
+CONNECT_REST_URL=http://connect:8083
+SCHEMA_REGISTRY_URL=http://schema:8081
+SCHEMA_REGISTRY_AUTH=USER_INFO
+SCHEMA_REGISTRY_USER=admin
+SCHEMA_REGISTRY_PASSWORD=admin
+
+### Your License Details
+LICENSE_ID=<license-id>
+LICENSE_CODE=<license-code>
+LICENSEE=<licensee>
+LICENSE_EXPIRY=<license-expiry>
+LICENSE_SIGNATURE=<license-signature>
+```
+
+### Using the Kpow Commercial Trial Container
+
+Follow the same start/stop/access method as for Kpow Community with the trial compose configuration, e.g.
+
+```
+docker compose -f docker-compose-trial.yml up
+```
 
 ## Support
 
