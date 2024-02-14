@@ -72,7 +72,7 @@ Follow these instructions to run Kafka, Connect, and Schema resources with Kpow 
 ### Configure a Kpow Community License
 
 * Get a [free Kpow Community license](https://factorhouse.io/kpow/community/)
-* Enter the license details into [resoources/kpow/local-community.env](resources/kpow/local-community.env)
+* Enter the license details into [resources/kpow/local-community.env](resources/kpow/local-community.env)
 
 ```
 BOOTSTRAP=kafka-1:19092,kafka-2:19093,kafka-3:19094
