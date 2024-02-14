@@ -38,7 +38,7 @@ This repository contains a Docker Compose environment that will start:
 - Kafka Connect 
 - Schema Registry 
 - Kpow for Apache Kafka, either:
-  - Kpow Community Edition (free for indivifuals or organisations), or; 
+  - Kpow Community Edition (free for individuals or organisations), or; 
   - Kpow Commercial Trial (supports authentication, RBAC, etc)
 
 All container images used support `linux/amd64` and `linux/arm64` platforms.
