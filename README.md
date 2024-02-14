@@ -28,6 +28,8 @@
   * [Add Kafka Connect Connectors](#add-kafka-connect-connectors)
     * [Custom connectors](#custom-connectors)
 * [Run Kafka resources with Kpow Commercial Trial](#run-kafka-resources-with-kpow-commercial-trial)
+  * [Configure a Kpow Commercial Trial License](#configure-a-kpow-commercial-trial-license)
+  * [Use the Kpow Commercial Trial container](#use-the-kpow-commercial-trial-container)
 * [Support](#support)
 * [License](#license)
 
@@ -273,7 +275,7 @@ LICENSE_EXPIRY=<license-expiry>
 LICENSE_SIGNATURE=<license-signature>
 ```
 
-### Using the Kpow Commercial Trial Container
+### Use the Kpow Commercial Trial Container
 
 Follow the same start/stop/access method as for Kpow Community with the trial compose configuration, e.g.
 
