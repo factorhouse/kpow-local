@@ -240,11 +240,11 @@ Once installed, the connector will be visible within Kpow and available to creat
 
 ## Run Kafka resources with Kpow Commercial Trial
 
+![Kpow Login](/resources/img/kpow-login.png)
+
 Follow these instructions to run Kafka, Connect, and Schema resources with Kpow Enterprise Edition.
 
 A commercial trial of Kpow allows you access to all features, including Authentication, Authorisation, RBAC, Audit Log, Prometheus egress, and more.
-
-![Kpow Login](/resources/img/kpow-login.png)
 
 For example purposes we configure a simple [file-based authentication](/resources/jaas/hash-realm.properties) with an example [RBAC configuration](/resources/rbac/hash-rbac.yml).
 
