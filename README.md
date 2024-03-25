@@ -5,9 +5,9 @@
 
 ### Versions
 
-| Kpow Version                 | Confluent Container Version   | Kafka Equivalent                |
-|------------------------------|-------------------------------|---------------------------------|
-| `factorhouse/kpow-ce:latest` | `confluentinc/cp-kafka:7.5.3` | `org.apache.kafka/kafka:3.5.2`  |
+| Kpow Version                 | Confluent Container Version   | Kafka Equivalent               |
+|------------------------------|-------------------------------|--------------------------------|
+| `factorhouse/kpow-ce:latest` | `confluentinc/cp-kafka:7.6.0` | `org.apache.kafka/kafka:3.6.0` |
 
 ### Guide
 
