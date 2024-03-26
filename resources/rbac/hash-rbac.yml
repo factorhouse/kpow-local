@@ -15,6 +15,7 @@ policies:
       - TOPIC_DELETE
       - GROUP_EDIT
       - ACL_EDIT
+      - BULK_ACTION
     effect: Allow
     resource:
       - cluster
