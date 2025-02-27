@@ -1,13 +1,13 @@
 # Run Local Kafka and Kpow with Docker Compose
 
-[![Release to DockerHub](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/operatr-io/kpow-docker/actions/workflows/release.yml)
+[![Release to DockerHub](https://github.com/factorhouse/kpow/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/factorhouse/kpow/actions/workflows/release.yml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/operatr/kpow)
 
 ### Versions
 
 | Kpow Version                 | Confluent Container Version   | Kafka Equivalent               |
 |------------------------------|-------------------------------|--------------------------------|
-| `factorhouse/kpow-ce:latest` | `confluentinc/cp-kafka:7.7.0` | `org.apache.kafka/kafka:3.7.0` |
+| `factorhouse/kpow-ce:latest` | `confluentinc/cp-kafka:7.8.0` | `org.apache.kafka/kafka:3.8.0` |
 
 ### Guide
 
