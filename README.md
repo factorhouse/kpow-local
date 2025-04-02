@@ -261,7 +261,7 @@ Kpow [supports a number of authentication providers](https://docs.factorhouse.io
 ### Configure a Kpow Enterprise Trial License
 
 * Get a [free Kpow Trial license](https://factorhouse.io/kpow/get-started/)
-* Enter the license details into [resoources/kpow/local-trial.env](resources/kpow/local-trial.env)
+* Enter the license details into [resources/kpow/local-trial.env](resources/kpow/local-trial.env)
 
 ```
 JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/etc/kpow/jaas/hash-jaas.conf
