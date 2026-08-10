@@ -38,10 +38,10 @@
 This repository contains a Docker Compose environment that will start:
 
 - A 3-node Kafka cluster
-- Kafka Connect 
-- Schema Registry 
+- Kafka Connect
+- Schema Registry
 - Kpow for Apache Kafka, either:
-  - Kpow Community Edition (free for individuals or organisations), or; 
+  - Kpow Community Edition (free for individuals or organisations), or;
   - Kpow Enterprise Trial (supports authentication, RBAC, etc)
 
 All container images used support `linux/amd64` and `linux/arm64` platforms.
@@ -183,7 +183,7 @@ docker run --network=kpow-local_default ...
 Then connect to the hosts that are running on that network
 
 ```
-bootstrap: kafka-1:19092,kafka-2:19093,kafka-3:19094 
+bootstrap: kafka-1:19092,kafka-2:19093,kafka-3:19094
 ```
 
 #### host.docker.internal bootstrap
@@ -193,7 +193,7 @@ This is a good trick for running a docker container that connects back to a port
 `host.docker.internal` effective routes back to localhost.
 
 ```
-bootstrap: host.docker.internal:9092,host.docker.internal:9093,host.docker.internal:9094 
+bootstrap: host.docker.internal:9092,host.docker.internal:9093,host.docker.internal:9094
 ```
 
 ### Kafka Connect
@@ -232,7 +232,7 @@ curl -L -o ./resources/connect/debezium-connector-postgres-1.9.6.Final-plugin.ta
 cd resources/connect
 ```
 
-``` 
+```
 tar –xvzf debezium-connector-postgres-1.9.6.Final-plugin.tar.gz
 ```
 
@@ -248,7 +248,7 @@ A trial of Kpow allows you access to all features, including Authentication, Aut
 
 For example purposes we configure a simple [file-based authentication](/resources/jaas/hash-realm.properties) with an example [RBAC configuration](/resources/rbac/hash-rbac.yml).
 
-Kpow [supports a number of authentication providers](https://docs.factorhouse.io/kpow-ee/authentication/overview/) including: 
+Kpow [supports a number of authentication providers](https://docs.factorhouse.io/kpow-ee/authentication/overview/) including:
 
 * Okta
 * OpenID
@@ -268,7 +268,7 @@ JAVA_TOOL_OPTIONS=-Djava.security.auth.login.config=/etc/kpow/jaas/hash-jaas.con
 AUTH_PROVIDER_TYPE=jetty
 RBAC_CONFIGURATION_FILE=/etc/kpow/rbac/hash-rbac.yml
 
-BOOTSTRAP=kafka-1:19092,kafka-2:19093,kafka-3:19094
+BOOTSTRAP=kafka-1:19092,kafka-2:19092,kafka-3:19092
 CONNECT_REST_URL=http://connect:8083
 SCHEMA_REGISTRY_URL=http://schema:8081
 SCHEMA_REGISTRY_AUTH=USER_INFO
