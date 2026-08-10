@@ -138,7 +138,6 @@ docker compose -f docker-compose-community.yml down
  ✔ Container kpow-local-kafka-2-1    Removed                                                                                                                                                                                                              0.0s
  ✔ Container kpow-local-kafka-3-1    Removed                                                                                                                                                                                                              0.0s
  ✔ Container kpow-local-kafka-1-1    Removed                                                                                                                                                                                                              0.0s
- ✔ Container kpow-local-zookeeper-1  Removed                                                                                                                                                                                                              0.5s
  ✔ Network kpow-local_default        Removed
 ```
 
